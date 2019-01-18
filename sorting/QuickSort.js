@@ -1,7 +1,7 @@
 const QuickSort = arr => {
   // sort using QuickSort
-  if (arr.length === 0) {
-    return;
+  if (arr.length <= 1) {
+    return arr;
   }
 
   const pivot = arr.pop();
@@ -16,7 +16,7 @@ const QuickSort = arr => {
   });
   arrLeft = QuickSort(arrLeft);
   arrRight = QuickSort(arrRight);
-  return [].concat(arrLeft, pivot, arrRight);
+  return arrLeft.concat(pivot, arrRight);
 };
 
 module.exports = QuickSort;
